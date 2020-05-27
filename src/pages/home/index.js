@@ -3,7 +3,8 @@ import './styles.css';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import Cadastro from '../cadastro';
 import Lista from '../lista';
-
+import Registro from '../registro';
+import Edit from '../edit';
 function Home() {
     return (
         <Router>
@@ -20,6 +21,8 @@ function Home() {
                 <Switch>
                     <Route exact path='/' component={Cadastro}></Route>
                     <Route  path='/lista' component={Lista}></Route>
+                    <Route path='/registro/:token' component={Registro} />
+                    <Route path='/edit/:token' component={Edit} />
                 </Switch>
             </div>
         </Router>

@@ -1,0 +1,51 @@
+.aside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside .info{
+    background-color: #ffff;
+    margin: 15px 0;
+    padding: 50px 50px;
+    width: 550px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.aside .info label{
+    font-weight: 700;
+    color: blueviolet;
+    font-size: 18px;
+}
+.aside .info .titulo{
+    text-align: center;
+    color: rgb(83, 83, 83);
+    font-weight: 600;
+    font-size: 22px;
+
+}
+.aside .info .infos{
+    margin-top: 50px;
+}
+.aside .info p{
+   color: rgb(83, 83, 83);
+   font-weight: 600;
+}
+
+.btn-reg{
+    background-color: blueviolet;
+    border: none;
+    color: #ffff;
+    text-transform: uppercase;
+    height: 50px;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 15px 0;
+    position: relative;
+    top: 15px;
+   
+}

@@ -1,0 +1,19 @@
+.body-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+.btn-edit{
+    margin: 25px 0;
+    height: 50px;
+    outline: none;
+    border: none;
+    background-color: blueviolet;
+    color: #ffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    font-weight: 600;
+}

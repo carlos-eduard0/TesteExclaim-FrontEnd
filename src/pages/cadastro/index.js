@@ -7,6 +7,7 @@ import Step4 from './Step4';
 import Swal from 'sweetalert2'
 import './main.css';
 import api from '../../services/api';
+
 export class Cadastro extends Component {
     state = {
         step: 1,
@@ -38,7 +39,9 @@ export class Cadastro extends Component {
         marca: '',
         numeroPlaca: '',
     }
+
     addCliente = async () => {
+
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
