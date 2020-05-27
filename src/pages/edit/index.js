@@ -40,13 +40,13 @@ function Edit() {
     const [end, setEnd] = useState(cliente.end);
 
     useEffect(() => {
-        async function loadDevs() {
+        async function loadCliente() {
             console.log(token);
             const response = await api.get(`cliente/${token}`);
             setCliente(response.data);
 
         }
-        loadDevs();
+        loadCliente();
     }, [token]);
 
     async function handleEdit(e) {

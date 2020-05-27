@@ -9,12 +9,12 @@ function Registro() {
     const [registro, setRegistro] = useState([]);
 
     useEffect(() => {
-        async function loadDevs() {
+        async function loadCliente() {
             console.log(token);
             const response = await api.get(`cliente/${token}`);
             setRegistro(response.data);
         }
-        loadDevs();
+        loadCliente();
     }, [token]);
 
 

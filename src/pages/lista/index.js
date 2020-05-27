@@ -16,13 +16,13 @@ function Lista() {
     }
     const [cliente, setCliente] = useState([]);
     useEffect(() => {
-        async function loadDevs() {
+        async function loadCliente() {
             const response = await api.get('/cliente');
 
             setCliente(response.data);
         }
 
-        loadDevs();
+        loadCliente();
     }, []);
     return (
         <div className="body-listagem">
