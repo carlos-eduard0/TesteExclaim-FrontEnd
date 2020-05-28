@@ -5,6 +5,11 @@ import Cadastro from '../cadastro';
 import Lista from '../lista';
 import Registro from '../registro';
 import Edit from '../edit';
+import Carros from '../carros';
+import AddCarro from '../addCarro';
+import Revisao from '../revisao';
+import addRevisao from '../addRevisao';
+import editCarro from '../editCarro';
 function Home() {
     return (
         <Router>
@@ -23,6 +28,11 @@ function Home() {
                     <Route  path='/lista' component={Lista}></Route>
                     <Route path='/registro/:token' component={Registro} />
                     <Route path='/edit/:token' component={Edit} />
+                    <Route path='/carros/:token' component={Carros} />
+                    <Route path='/addcarro/:token' component={AddCarro} />
+                    <Route path='/revisao/:token' component={Revisao} />
+                    <Route path='/addRevisao/:token' component={addRevisao} />
+                    <Route path='/editCarro/:token' component={editCarro} />
                 </Switch>
             </div>
         </Router>

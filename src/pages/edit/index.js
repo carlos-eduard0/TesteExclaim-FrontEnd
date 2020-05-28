@@ -27,10 +27,6 @@ function Edit() {
     const [cpf, setCpf] = useState(cliente.cpf);
     const [rg, setRg] = useState(cliente.rg);
     const [orgaoEmissor, setOrgaoEmissor] = useState(cliente.orgaoEmissor);
-    const [nomeCarro, setNomeCarro] = useState(cliente.nomeCarro);
-    const [anoCarro, setAnoCarro] = useState(cliente.anoCarro);
-    const [marca, setMarca] = useState(cliente.marca);
-    const [numeroPlaca, setNumeroPlaca] = useState(cliente.numeroPlaca);
     const [cidade, setCidade] = useState(cliente.cidade);
     const [uf, setUf] = useState(cliente.uf);
     const [bairro, setBairro] = useState(cliente.bairro);
@@ -58,7 +54,7 @@ function Edit() {
             })
         }
         else{
-            const res = await api.put(`cliente/${token}`, {
+            await api.put(`cliente/${token}`, {
                 nome,
                 idade,
                 email,
@@ -66,10 +62,6 @@ function Edit() {
                 cpf,
                 rg,
                 orgaoEmissor,
-                nomeCarro,
-                anoCarro,
-                marca,
-                numeroPlaca,
                 cidade,
                 uf,
                 bairro,
@@ -211,40 +203,6 @@ function Edit() {
                         name="complemento"
                         defaultValue={cliente.complemento}
                         onChange={e => setComplemento(e.target.value)}
-                        required
-                    />
-                    <label htmlFor="nomeCarro">Nome do carro</label>
-                    <input
-                        type="text"
-                        name="nomeCarro"
-                        defaultValue={cliente.nomeCarro}
-                        onChange={e => setNomeCarro(e.target.value)}
-                        required
-
-                    />
-                    <label htmlFor="anoCarro">Ano do carro</label>
-                    <input
-                        type="number"
-                        name="anoCarro"
-                        defaultValue={cliente.anoCarro}
-                        onChange={e => setAnoCarro(e.target.value)}
-                        required
-                    />
-
-                    <label htmlFor="marca">Marca do carro</label>
-                    <input
-                        type="text"
-                        name="marca"
-                        defaultValue={cliente.marca}
-                        onChange={e => setMarca(e.target.value)}
-                        required
-                    />
-                    <label htmlFor="numeroPlaca" id="input-lado">Número da placa</label>
-                    <input
-                        type="text"
-                        name="numeroPlaca"
-                        defaultValue={cliente.numeroPlaca}
-                        onChange={e => setNumeroPlaca(e.target.value)}
                         required
                     />
                     <button className="btn-edit" type="submit">Salvar</button>

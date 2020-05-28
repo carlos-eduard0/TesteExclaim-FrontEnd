@@ -5,6 +5,7 @@ import api from '../../services/api';
 import { Link } from 'react-router-dom';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import DriveEtaIcon from '@material-ui/icons/DriveEta';
 function Lista() {
     async function handleDelete(id) {
         try {
@@ -18,7 +19,6 @@ function Lista() {
     useEffect(() => {
         async function loadCliente() {
             const response = await api.get('/cliente');
-
             setCliente(response.data);
         }
 
@@ -34,9 +34,10 @@ function Lista() {
                                 <th>Nome</th>
                                 <th>Idade</th>
                                 <th>Telefone</th>
-                                <th>Nome do carro</th>
-                                <th>Número da placa</th>
+                                <th>CPF</th>
+                                <th>RG</th>
                                 <th><AssignmentIndIcon /></th>
+                                <th><DriveEtaIcon /></th>
                                 <th><DeleteForeverIcon /></th>
                             </tr>
                         </thead>
@@ -46,10 +47,11 @@ function Lista() {
                                     <td>{cliente.nome}</td>
                                     <td>{cliente.idade}</td>
                                     <td>{cliente.telefone}</td>
-                                    <td>{cliente.nomeCarro}</td>
-                                    <td>{cliente.numeroPlaca}</td>
-                                    <td><Link to={`/registro/${cliente.id}`}><button>Ver</button></Link></td>
-                                    <td><button onClick={() => handleDelete(cliente.id)}>Excluir</button></td>
+                                    <td>{cliente.cpf}</td>
+                                    <td>{cliente.rg}</td>
+                                    <td><Link to={`/registro/${cliente.id}`}><button>Detalhes</button></Link></td>
+                                    <td><Link to={`/carros/${cliente.id}`}><button>Meus Carros</button></Link></td>
+                                    <td><button onClick={() => handleDelete(cliente.id)}>Deletar</button></td>
                                 </tr>
                             ))}
                         </tbody>

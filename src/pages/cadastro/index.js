@@ -3,7 +3,7 @@ import './styles.css';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
-import Step4 from './Step4';
+
 import Swal from 'sweetalert2'
 import './main.css';
 import api from '../../services/api';
@@ -29,15 +29,9 @@ export class Cadastro extends Component {
         cidade: '',
         uf: '',
         bairro: '',
-        endereco: '',
+        end: '',
         numero: '',
         complemento: '',
-
-        //step 4
-        nomeCarro: '',
-        anoCarro: '',
-        marca: '',
-        numeroPlaca: '',
     }
 
     addCliente = async () => {
@@ -53,7 +47,7 @@ export class Cadastro extends Component {
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
         })
-        const { nome, idade, email, telefone, cpf, rg, orgaoEmissor, cep, cidade, uf, bairro, end, numero, complemento, nomeCarro, anoCarro, marca, numeroPlaca } = this.state;
+        const { nome, idade, email, telefone, cpf, rg, orgaoEmissor, cep, cidade, uf, bairro, end, numero, complemento} = this.state;
         const res = await api.post('/cliente', {
             nome,
             idade,
@@ -68,11 +62,7 @@ export class Cadastro extends Component {
             bairro,
             end,
             numero,
-            complemento,
-            nomeCarro,
-            anoCarro,
-            marca,
-            numeroPlaca
+            complemento
         })
         console.log(res.data);
         try {
@@ -112,7 +102,7 @@ export class Cadastro extends Component {
         this.setState({ [input]: e.target.value });
     }
     showStep = () => {
-        const { step, nome, idade, email, telefone, cpf, rg, orgaoEmissor, cep, cidade, uf, bairro, end, numero, complemento, nomeCarro, anoCarro, marca, numeroPlaca } = this.state;
+        const { step, nome, idade, email, telefone, cpf, rg, orgaoEmissor, cep, cidade, uf, bairro, end, numero, complemento } = this.state;
 
         if (step === 1)
             return (<Step1
@@ -146,18 +136,6 @@ export class Cadastro extends Component {
                 end={end}
                 numero={numero}
                 complemento={complemento}
-            />);
-
-
-        else if (step === 4)
-            return (<Step4
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                handleChange={this.handleChange}
-                nomeCarro={nomeCarro}
-                anoCarro={anoCarro}
-                marca={marca}
-                numeroPlaca={numeroPlaca}
                 addCliente={this.addCliente}
             />);
     }

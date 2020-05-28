@@ -25,7 +25,7 @@ class Step3 extends Component {
             })
         }
         else if (isCEP(cep)) {
-            this.props.nextStep();
+            this.props.addCliente();
         }
     }
 

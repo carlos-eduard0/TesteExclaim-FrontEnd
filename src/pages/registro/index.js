@@ -39,14 +39,6 @@ function Registro() {
                     <p>{registro.rg}</p>
                     <label htmlFor="">Orgão Emissor:</label>
                     <p>{registro.orgaoEmissor}</p>
-                    <label htmlFor="">Nome do Carro:</label>
-                    <p>{registro.nomeCarro}</p>
-                    <label htmlFor="">Ano do Carro:</label>
-                    <p>{registro.anoCarro}</p>
-                    <label htmlFor="">Marca:</label>
-                    <p>{registro.marca}</p>
-                    <label htmlFor="">Número da Placa:</label>
-                    <p>{registro.numeroPlaca}</p>
                     <label htmlFor="">Cidade:</label>
                     <p>{registro.cidade}</p>
                     <label htmlFor="">UF:</label>
