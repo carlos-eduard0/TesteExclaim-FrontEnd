@@ -45,7 +45,7 @@ function Carros() {
                                     <th>Ano</th>
                                     <th>Marca</th>
                                     <th>Número da placa</th>
-                                    <th>Revisão</th>
+                                    <th>Revisões</th>
                                     <th><EditIcon/></th>
                                     <th><DeleteForeverIcon/></th>
                                 </tr>
@@ -57,7 +57,7 @@ function Carros() {
                                         <td>{carros.anoCarro}</td>
                                         <td>{carros.marca}</td>
                                         <td>{carros.numeroPlaca}</td>
-                                        <td><Link to={`/revisao/${carros.key}`}><button>Marcar</button></Link></td>
+                                        <td><Link to={`/revisao/${carros.key}`}><button>Detalhes</button></Link></td>
                                         <td><Link to={`/editCarro/${carros.key}`}><button>Editar</button></Link></td>
                                         <td><button onClick={() => handleDelete(carros.key)}>Deletar</button></td>
                                     </tr>
